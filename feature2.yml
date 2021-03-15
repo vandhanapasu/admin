@@ -1,0 +1,13 @@
+feature2
+1. There are no tables once localhost DB connection is created.
+2. Exec into backend container and start application.
+
+>docker-compose exec backend sh       
+>python manage.py startapp products
+
+3. Update installed_apps, middleware, constant in admin.settings to reflect the new app and dependencies.
+
+4. Update mysql connection in settings.py
+
+5. Run migrations to create tables in mysql
+
