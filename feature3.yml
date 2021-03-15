@@ -25,4 +25,14 @@ Part II:
   3. Use the serializers in Views next. All 5 methods for CRUD. Viewset is one of the ways to implement this.
   4. to use the methods in views.py, add urls.py to map the viewset-methods and CRUD [get, post, delete, put].
   5. check list function with Postman: GET http://localhost:8000/api/products --> []
-  
+
+Part III:
+  Add other functionality to methods.
+  Test create function. POST http://localhost:8000/api/products with sample body
+  Now GET will show data:
+  {
+    "id": 1,
+    "title": "title",
+    "image": "image",
+    "likes": 0
+  }
