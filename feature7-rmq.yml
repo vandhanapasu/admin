@@ -45,3 +45,17 @@ PART II:
     Received message in main
     b'Hello from publish in Products'
   """
+
+PART III:
+  Update dockerfile and compose to build queue containers with all needed consumer commands
+  >docker-compose up -d db [shows db logs on console]
+
+  """"
+    queue_1    | Started Consuming on main....
+    queue_1    | Received message in main
+    queue_1    | b'Hello from publish in Products'
+    queue_1    | Received message in main
+    queue_1    | b'Hello from publish in Products'
+  """
+
+  send test events: feature7 "GET products" [see consuming eents on flask app only]
