@@ -23,7 +23,7 @@ Part II:
   1.  When django returns objects in api, serializers are needed to process them.
   2.  Serializer not needed for User since we return random_id there.
   3.  Use the serializers in Views next. All 5 methods for CRUD. Viewset is one of the ways to implement this.
-
+  4.  to use the methods in views.py, add urls.py
 
 
 
