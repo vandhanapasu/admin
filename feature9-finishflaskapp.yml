@@ -21,3 +21,5 @@ Error:
 
 Add Likes:
   Like function in flask should internally call the django app UserAPIView to get random_id for adding likes.
+  adding likes does not honor the UNIQUE_CONSTRAINT. to be checked later.
+  The likes can be seen on product_user table.
