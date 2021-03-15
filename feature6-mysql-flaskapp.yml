@@ -1,0 +1,18 @@
+feature6:
+  In products model in flaskkapp, autoincrement=False since product will be created in django app(by admin for our student evaluation tool). And we will have same id in both tables - main and admin
+  No likes in this product.
+  UniqueConstraint will make sure user_id and product_id will be unique and not be repeated.
+
+  Now migration starts with manager.py
+  >docker-compose exec backend sh
+  >python manager.py db --help
+  >python manager.py db init [creates migration files]
+  >python manager.py db migrate
+
+  Create new mysql connection for main
+  New default table would have been created with above migration
+
+  >python manager.py db upgrade
+  Product and product_user table would have been created
+
+  This is how flask is connected to mysql using docker
