@@ -1,0 +1,23 @@
+feature5-flaskapp:
+  Create sample flask app
+  Installing requirement for flaskapp - mysql client fails on mac, do this: https://stackoverflow.com/questions/7475223/mysql-config-not-found-when-installing-mysqldb-python-interface
+    """
+    Install mysql
+    brew install mysql
+    brew unlink mysql
+    brew install mysql-connector-c
+    Add the mysql bin folder to PATH
+    export PATH=/usr/local/Cellar/mysql/8.0.11/bin:$PATH
+    mkdir /usr/local/Cellar/lib/
+    Create a symlink
+    sudo ln -s /usr/local/Cellar/mysql/8.0.11/lib/libmysqlclient.21.dylib /usr/local/Cellar/lib/libmysqlclient.21.dylib
+    brew reinstall openssl
+    brew link mysql
+    Finally, install mysql-client
+    LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/ pip install mysqlclient
+
+    at the end you should see: Successfully installed mysqlclient-2.0.3
+    """
+
+    Validate sample flask app with "GET flaskapp root"
+    docker-compose up for flaskapp works
