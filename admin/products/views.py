@@ -4,12 +4,14 @@ from rest_framework.views import APIView
 
 from .models import Product, User
 from .serializers import ProductSerializer
+from .producer import publish
 import random
 
 class ProductViewSet(viewsets.ViewSet):
     def list(self, request): #/api/products route
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
+        publish()
         return Response(serializer.data)
 
     def create(self, request): #/api/products route
