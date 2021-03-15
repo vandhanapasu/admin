@@ -1,0 +1,13 @@
+feature8-sendevents:
+  Send events any time product [post/feedback] is created/deleted/updated.
+  test events: "Get products" - will be empty
+  try: POST products, DELETE products
+  """"
+  queue_1    | Started Consuming on main....
+  queue_1    | Received message in main
+  queue_1    | 4
+  queue_1    | product_deleted
+  queue_1    | Received message in main
+  queue_1    | {'id': 5, 'title': 'feature8-sendevent TITLE', 'image': 'feature8-sendevent IMAGE', 'likes': 0}
+  queue_1    | product_created
+  """"
