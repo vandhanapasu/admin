@@ -4,6 +4,7 @@ from flask import Flask, jsonify, abort
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint
+from producer import publish
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:root@db/main'
@@ -43,9 +44,10 @@ def like(id):
         db.session.commit()
 
         #event
+        publish('Product_liked', id) 
     except:
         abort(400, 'You already liked this Product!!!')
-        
+
     return jsonify({
         'message': 'success'
     })
