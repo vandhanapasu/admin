@@ -11,7 +11,7 @@ def callback(ch, method, properties, body):
     print('Received message in admin')
     print(body)
 
-channel.basic_consume(queue='admin', on_message_callback=callback)
+channel.basic_consume(queue='admin', on_message_callback=callback, auto_ack=True)
 print('Started Consuming on admin....')
 channel.start_consuming()
 channel.close()

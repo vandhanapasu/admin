@@ -59,3 +59,16 @@ PART III:
   """
 
   send test events: feature7 "GET products" [see consuming eents on flask app only]
+
+
+  PART IV:
+    Add auto_ack=True so we dont se messages just being published and not auto_consumed.
+    You will see docker come up with default print: "Started consuming" - but no backlogged messages.
+
+    """"
+    queue_1    | Started Consuming on main....
+    """" 
+    queue_1    | Started Consuming on admin....
+    """"
+
+    on rmq portal: ready and total will be 0

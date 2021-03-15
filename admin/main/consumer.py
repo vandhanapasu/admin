@@ -11,7 +11,7 @@ def callback(ch, method, properties, body):
     print('Received message in main')
     print(body)
 
-channel.basic_consume(queue='main', on_message_callback=callback)
+channel.basic_consume(queue='main', on_message_callback=callback, auto_ack=True)
 print('Started Consuming on main....')
 channel.start_consuming()
 channel.close()
