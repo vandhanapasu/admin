@@ -1,0 +1,27 @@
+feature9:
+POST events:
+  admin:
+    queue_1    | Started Consuming on admin....
+    backend_1  | System check identified no issues (0 silenced).
+    backend_1  | March 15, 2021 - 21:26:52
+    backend_1  | Django version 3.1.3, using settings 'admin.settings'
+    backend_1  | Starting development server at http://0.0.0.0:8000/
+    backend_1  | Quit the server with CONTROL-C.
+    backend_1  | [15/Mar/2021 21:28:04] "POST /api/products HTTP/1.1" 201 98
+
+main:
+  queue_1    | Received message in main
+  queue_1    | {'id': 6, 'title': 'feature9-finishflaskapp TITLE', 'image': 'feature9-finishflaskapp IMAGE', 'likes': 0}
+  queue_1    | product_created
+
+Error:
+  json body successfully POST to products_product table but postman will give an empty response for GET calls.
+  To fix this, update product class to show id, title, image to include it on response for any calls.
+
+
+Add Likes:
+  Like function in flask should internally call the django app UserAPIView to get random_id for adding likes.
+  adding likes does not honor the UNIQUE_CONSTRAINT. to be checked later.
+  The likes can be seen on product_user table.
+
+  Once likes incrementor is added on django callback, test it with GET call to view likes and POST likes and check GET like
