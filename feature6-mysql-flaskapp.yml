@@ -1,0 +1,6 @@
+feature6:
+  In products model in flaskkapp, autoincrement=False since product will be created in django app(by admin for our student evaluation tool). And we will have same id in both tables - main and admin
+  No likes in this product.
+  UniqueConstraint will make sure user_id and product_id will be unique and not be repeated.
+
+  Now migration starts with manager.py
