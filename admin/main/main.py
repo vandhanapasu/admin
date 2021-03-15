@@ -9,11 +9,13 @@ CORS(app)
 
 db = SQLAlchemy(app)
 
+@dataclass
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=False)
     title = db.Column(db.String(200))
     image = db.Column(db.String(200))
 
+@dataclass
 class ProductUser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
@@ -25,5 +27,5 @@ class ProductUser(db.Model):
 def index():
     return jsonify(Product.query.all())
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     app.run(debug=True, host='0.0.0.0')
