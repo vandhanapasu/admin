@@ -1,0 +1,41 @@
+feature3
+
+1.migrating sample admin app to create tables in empty mysql schema
+
+class User(models.Model):
+    pass 
+
+>this tables will only have id field.
+
+1. Exec into admin backend container
+>docker-compose exec backend sh
+>python manage.py makemigrations
+Migrations for 'products':
+  products/migrations/0001_initial.py
+    - Create model Product
+    - Create model User
+>python manage.py migrate
+
+You can now see tables products_product and products_user in admin DB.
+Models are created.
+
+Part II:
+  1. When django returns objects in api, serializers are needed to process them.
+  2. Serializer not needed for User since we return random_id there.
+  3. Use the serializers in Views next. All 5 methods for CRUD. Viewset is one of the ways to implement this.
+  4. to use the methods in views.py, add urls.py to map the viewset-methods and CRUD [get, post, delete, put].
+  5. check list function with Postman: GET http://localhost:8000/api/products --> []
+
+Part III:
+  Add other functionality to methods.
+  Test create function. "POST Products" http://localhost:8000/api/products with sample body
+  Now GET will show data:
+  {
+    "id": 1,
+    "title": "title",
+    "image": "image",
+    "likes": 0
+  }
+  Test retrieve function with "GET product by id"
+  Test update function by using "PUT product by id"
+  Test delete with "DELETE product by id"
