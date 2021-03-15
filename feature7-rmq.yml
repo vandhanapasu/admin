@@ -23,3 +23,25 @@ feature7:
       Received message in admin
       b'Hello from publish in Products'
     """
+
+PART II:
+  Add consumer for main app.
+
+  exec to main container
+  (env) shajith_ravi:main/ (feature7-rmq✗) $ docker-compose exec backend sh                                                                                          [0:07:56]
+  # python consumer.py
+  Started Consuming on main....
+
+
+  Update PRODUCER to pusblish to main queue.
+  send test events: feature7 "GET products"
+
+  """
+    (env) shajith_ravi:main/ (feature7-rmq✗) $ docker-compose exec backend sh                                                                                          [0:07:56]
+    # python consumer.py
+    Started Consuming on main....
+    Received message in main
+    b'Hello from publish in Products'
+    Received message in main
+    b'Hello from publish in Products'
+  """
