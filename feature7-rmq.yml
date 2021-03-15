@@ -1,3 +1,25 @@
 feature7:
   back to django app to create PRODUCER in Products
   use cloud amqp [RMQaaS] to create base cluster 
+  Create consumer in root folder [admin app]
+
+  test:
+    >docker-compose exec backend sh [admin]
+    >python consumer.py
+    
+    send test events: feature7 "GET products"
+    usually see this ERROR: pika.exceptions.ChannelWrongStateError: Channel is closed. - restart both docker
+    
+    """
+      (env) shajith_ravi:admin/ (feature7-rmq✗) $ docker-compose exec backend sh                                                                                         [0:01:16]
+      # python consumer.py
+      Started Consuming....
+      Received message in admin
+      b'Hello from publish in Products'
+      Received message in admin
+      b'Hello from publish in Products'
+      Received message in admin
+      b'Hello from publish in Products'
+      Received message in admin
+      b'Hello from publish in Products'
+    """
