@@ -17,3 +17,7 @@ main:
 Error:
   json body successfully POST to products_product table but postman will give an empty response for GET calls.
   To fix this, update product class to show id, title, image to include it on response for any calls.
+
+
+Add Likes:
+  Like function in flask should internally call the django app UserAPIView to get random_id for adding likes.
