@@ -1,0 +1,6 @@
+feature4:
+  Use APIView for Users
+  Add basic get call for users.
+  Add path to urls
+  ID is randomly generated
+  Manually add first user to test "GET users"
