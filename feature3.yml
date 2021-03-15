@@ -37,4 +37,5 @@ Part III:
     "likes": 0
   }
   Test retrieve function with "GET product by id"
-  Test update function byusing "PUT product by id"
+  Test update function by using "PUT product by id"
+  Test delete with "DELETE product by id"

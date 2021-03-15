@@ -27,6 +27,7 @@ class ProductViewSet(viewsets.ViewSet):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
-
     def destroy(self, request, pk=None):  
-        pass    
+        product = Product.objects.get(id=pk) 
+        product.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
